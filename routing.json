@@ -1,0 +1,48 @@
+{
+  "version": "2025-08-10",
+  "day_quota_usd": 0.2,
+  "lifeline": {
+    "L1": 0.8,
+    "L2": 0.9,
+    "L3": 0.95
+  },
+  "models": {
+    "deepseek": {
+      "price_in": 0.05,
+      "price_out": 0.1,
+      "role": "backbone",
+      "enabled": true
+    },
+    "gemini": {
+      "price_in": 0.1,
+      "price_out": 0.1,
+      "role": "multimodal",
+      "enabled": true
+    },
+    "gpt4o": {
+      "price_in": 5.0,
+      "price_out": 15.0,
+      "role": "decider",
+      "enabled": true
+    }
+  },
+  "weights": {
+    "default": {
+      "deepseek": 0.6,
+      "gemini": 0.25,
+      "gpt4o": 0.15
+    }
+  },
+  "limits": {
+    "gpt4o_out": 1200
+  },
+  "policy": {
+    "immediate_latency_s": 2.0,
+    "offline_window_localtime": {
+      "start": "22:00",
+      "end": "07:00"
+    },
+    "force_summary_on_L2": true,
+    "force_backbone_on_L3": true
+  }
+}

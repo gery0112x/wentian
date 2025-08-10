@@ -1,0 +1,34 @@
+{
+  "functions": {
+    "api/ask_tian.js": {
+      "runtime": "edge",
+      "regions": [
+        "hkg",
+        "sin",
+        "tyo"
+      ]
+    },
+    "api/grey_intel_ingest.js": {
+      "runtime": "edge",
+      "regions": [
+        "hkg",
+        "sin",
+        "tyo"
+      ]
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/ask_tian",
+      "dest": "/api/ask_tian.js"
+    },
+    {
+      "src": "/api/grey_intel_ingest",
+      "dest": "/api/grey_intel_ingest.js"
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
+}
